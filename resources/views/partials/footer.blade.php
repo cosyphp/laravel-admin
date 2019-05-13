@@ -1,5 +1,5 @@
 <!-- Main Footer -->
-<footer class="main-footer">
+<footer class="main-footer hide">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
         @if(config('admin.show_environment'))
