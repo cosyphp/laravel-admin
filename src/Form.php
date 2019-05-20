@@ -1391,6 +1391,7 @@ class Form implements Renderable
     {
         $map = [
             'button'         => Field\Button::class,
+            'submitBtn'      => Field\SubmitBtn::class,
             'checkbox'       => Field\Checkbox::class,
             'color'          => Field\Color::class,
             'currency'       => Field\Currency::class,
@@ -1419,6 +1420,7 @@ class Form implements Renderable
             'radio'          => Field\Radio::class,
             'rate'           => Field\Rate::class,
             'select'         => Field\Select::class,
+            'singleSelect'   => Field\SingleSelect::class,
             'slider'         => Field\Slider::class,
             'switch'         => Field\SwitchField::class,
             'text'           => Field\Text::class,
