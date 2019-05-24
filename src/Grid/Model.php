@@ -103,11 +103,16 @@ class Model
      * @var array
      */
     protected $notSorts = [
+        'ping',
         'curr_online',
         'load_ratio',
         'is_full',
+        'is_full_normal',
         'current_inflow',
-        'current_outflow'
+        'current_outflow',
+        'entrance_flow',
+        'export_flow',
+        'loss_rate'
     ];
 
     /**
