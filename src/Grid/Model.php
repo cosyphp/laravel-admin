@@ -100,6 +100,17 @@ class Model
     protected $eagerLoads = [];
 
     /**
+     * @var array
+     */
+    protected $notSorts = [
+        'curr_online',
+        'load_ratio',
+        'is_full',
+        'current_inflow',
+        'current_outflow'
+    ];
+
+    /**
      * Create a new grid model instance.
      *
      * @param EloquentModel $model
@@ -112,7 +123,6 @@ class Model
 
         $this->queries = collect();
 
-//        static::doNotSnakeAttributes($this->model);
     }
 
     /**
@@ -533,6 +543,10 @@ class Model
                 $column = $this->sort['column'];
                 $method = 'orderBy';
                 $arguments = [$column, $this->sort['type']];
+            }
+
+            if (in_array($this->sort['column'], $this->notSorts)) {
+                return;
             }
 
             $this->queries->push([
