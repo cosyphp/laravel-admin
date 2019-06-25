@@ -245,6 +245,16 @@ class Admin
         return Auth::guard('admin')->user();
     }
 
+    public function getUserAvatar()
+    {
+        $avatar = Auth::guard('admin')->user()->avatar;
+        if (starts_with($avatar, 'images')) {
+            return '/storage/'.$avatar;
+        } else {
+            return config('alioss.OSS_HOST').'/'.$avatar;
+        }
+    }
+
     /**
      * Set navbar.
      *
