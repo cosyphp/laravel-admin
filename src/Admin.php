@@ -133,7 +133,7 @@ class Admin
      *
      * @deprecated since v1.6.1
      */
-    public function content(Closure $callable = null)
+    public function contents(Closure $callable = null)
     {
         return new Content($callable);
     }
@@ -265,10 +265,10 @@ class Admin
     public function navbar(Closure $builder = null)
     {
         if (is_null($builder)) {
-            return $this->getNavbar();
+            return $this->getNavbars();
         }
 
-        call_user_func($builder, $this->getNavbar());
+        call_user_func($builder, $this->getNavbars());
     }
 
     /**
@@ -359,7 +359,7 @@ class Admin
 
         Form::registerBuiltinFields();
 
-        Grid::registerColumnDisplayer();
+        Grid::registerColumnDisplaer();
 
         Grid\Filter::registerFilters();
 
